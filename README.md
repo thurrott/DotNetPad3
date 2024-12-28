@@ -20,7 +20,7 @@ This version of the app supports a single document per app instance as before, b
 
 ![accent-color](https://github.com/user-attachments/assets/32daebe1-4101-400a-b166-04344ff761f4)
 
-**Customized title bar.** In an interim step toward the tabbed-based UI coming in the next version of the app, .NETpad 3.0 uses a fully-customized title bar area at the top of the window with an app logo, the current document name, a draggable and double-clickable area, and the standard Close, Maximize/Restore, and Close window buttons. For now, you have to type "Alt + Space" to display the system window menu, but a future version will include a right-click capability. This customization also precludes the use of the Snap layouts pop-up that's automatically provided by Windows 11 to apps. I will try to add this feature back in a future version of the app too.
+**Customized title bar.** In an interim step toward the tabbed-based UI coming in the next version of the app, .NETpad 3.0 uses a fully customized title bar area at the top of the window with an app logo, the current document name, a draggable and double-clickable area, and the standard Close, Maximize/Restore, and Close window buttons. For now, you have to type "Alt + Space" to display the system window menu, but a future version will include a right-click capability. This customization also precludes the use of the Snap layouts pop-up that's automatically provided by Windows 11 to apps. I will try to add this feature back in a future version of the app too.
 
 ![custom-titlebar](https://github.com/user-attachments/assets/df6fe221-fe17-4fe9-b9bb-edb8d46392b7)
 
@@ -32,7 +32,7 @@ This version of the app supports a single document per app instance as before, b
 
 **New Spell check feature with toggle.** You can toggle the system Spell check feature on/off and the app will save your preferences to settings and retain it between app launches. WPF doesn't provide native access to the related Autocorrect feature in Windows 11, but if that is added in the future, I will update the app.
 
-**New custom dialogs.** I created a new custom dialog template for .NETpad so that sub-windows like Auto save (which looks different for enable and disable), Confirmation, and Go to line look both native and beautiful. These windows support a nice translucency effect that I think makes them look nicer than the similar dialogs found in Notepad. (Note that there's no way to customize File save, save as, or open this way.) For now the app still uses a few standard (and thus non-styled) MessageBox dialogs, but I plan to create a custom MessageBox in the next version to address that.
+**New custom dialogs.** I created a new custom dialog template for .NETpad so that sub-windows like Auto save (which looks different for enable and disable), Confirmation, and Go to line look both native and beautiful. These windows support a nice translucency effect that I think makes them look nicer than the similar dialogs found in Notepad. (Note that there's no way to customize File save, save as, or open this way.) For now, the app still uses a few standard (and thus non-styled) MessageBox dialogs, but I plan to create a custom MessageBox in the next version to address that.
 
 ![confirmation-dialogs](https://github.com/user-attachments/assets/93d39be1-3716-4c57-9bce-f162c2d0c062)
 
@@ -44,7 +44,7 @@ This version of the app supports a single document per app instance as before, b
 
 ![menu-alignment](https://github.com/user-attachments/assets/70942736-9078-4ede-a20b-c6b2c2f3cbd1)
 
-**Fit and finish: Fixed menu checkmark weirdness.** Thanks to its buggy new support for Windows 11 theming, using a checkable menu item means that the other menu items in the same menu are all visually offset, and that's true regardless of whether that item is checked or not. To workaround this, I added an empty image to the left of the other menu items that matches the width of the system checkmark. So these menu items all line up correctly now, as they do in Notepad. 
+**Fit and finish: Fixed menu checkmark weirdness.** Thanks to its buggy new support for Windows 11 theming, using a checkable menu item means that the other menu items in the same menu are all visually offset, and that's true regardless of whether that item is checked or not. To work around this, I added an empty image to the left of the other menu items that matches the width of the system checkmark. So these menu items all line up correctly now, as they do in Notepad. 
 
 ![menu-checkmark-offset](https://github.com/user-attachments/assets/99b0f8a5-9912-46f3-bd41-a349b8fbcc05)
 
@@ -74,7 +74,7 @@ This version of the app supports a single document per app instance as before, b
 
 **Custom dialog boxes are resizable.** I really like the look and feel of the custom dialogs I created for .NETpad 3.0, but there is one major issue there, and it's tied to WPF's buggy support for Windows 11 theming: You can grab the border of these windows and drag to resize them. Obviously, the custom dialogs should not be resizable. But the only way to style these windows correctly requires this. I will investigate a workaround for a future version of the app. 
 
-**Selection rectangles.** Microsoft introduced a bizarre new usability feature in Windows 11 in 2024 that displays a garish black selection rectangle around the default control in a newly opened window. (You can see this in File Explorer, for example: The "Quick access" control is selected by default.) I'm not aware of a way to disable this ridiculous feature, which appears intermittently. But I will try to figure that out for a future version of the app (and hope that Microsoft adds a way to prevent this to Windows 11).
+**Selection rectangles.** Microsoft introduced a bizarre new usability feature in Windows 11 in 2024 that displays a garish black selection rectangle around the default control in a newly opened window. (You can see this in File Explorer, for example: The "Quick access" control is selected by default.) I'm not aware of a way to disable this ridiculous feature, which appears intermittently. But I will try to figure that out for a future version of the app (and hope that Microsoft adds a way to prevent this from displaying in Windows 11).
 
 ![selection-rectangle](https://github.com/user-attachments/assets/ebbca0df-0d4c-4713-90d5-4c26e39110e7)
 
