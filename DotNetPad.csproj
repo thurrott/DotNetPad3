@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows10.0.22621.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<NoWarn>$(NoWarn);WPF0001</NoWarn>
+	<StartupObject>DotNetPad.App</StartupObject>
+	<ApplicationIcon>t-icon.ico</ApplicationIcon>
+	<Title>.NETpad for Windows 11</Title>
+	<Version>3.0</Version>
+	<Authors>Paul Thurrott</Authors>
+	<Company>Thurrott LLC</Company>
+	<Description>.NETpad for Windows 11</Description>
+	<Copyright>© 2025 Paul Thurrott</Copyright>
+	<PackageIcon>t-icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="empty.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="t-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="empty.png" />
+    <Resource Include="t-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="t-icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
