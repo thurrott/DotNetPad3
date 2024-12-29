@@ -78,7 +78,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button Name="BackButton" Grid.Column="0" FontFamily="Segoe Fluent Icons" Content="&#xE72B;" FontSize="14" BorderThickness="0" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" Click="BackButton_Click" Visibility="Collapsed" />
-            <Image Name="AppIcon" Grid.Column="1" Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/t-icon.png" />
+            <Image Name="AppIcon" Grid.Column="1" Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/t-icon.png" MouseRightButtonUp="AppIcon_MouseRightButtonUp" />
             <TextBlock Name="TitleText" Grid.Column="2" Text=".NETpad" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold" TextWrapping="NoWrap" MaxWidth="200" MinWidth="50" />
             <ContentControl Grid.Column="3" MouseDoubleClick="MaximizeButton_Click">
                 <Separator Visibility="Visible" BorderThickness="0" />

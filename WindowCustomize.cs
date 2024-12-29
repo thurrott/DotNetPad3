@@ -17,6 +17,13 @@ namespace DotNetPad
             DragMove();
         }
 
+        // Display the system menu when you right-click the app icon
+        private void AppIcon_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var offset = Application.Current.MainWindow.BorderThickness;
+            SystemCommands.ShowSystemMenu(this, new Point((Left + offset.Left) + 24, (Top + offset.Top) + 24));
+        }
+
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
