@@ -20,7 +20,7 @@ This version of the app supports a single document per app instance as before, b
 
 ![accent-color](https://github.com/user-attachments/assets/32daebe1-4101-400a-b166-04344ff761f4)
 
-**Customized title bar.** In an interim step toward the tabbed-based UI coming in the next version of the app, .NETpad 3.0 uses a fully customized title bar area at the top of the window with an app logo, the current document name, a draggable and double-clickable area, and the standard Close, Maximize/Restore, and Close window buttons. For now, you have to type "Alt + Space" to display the system window menu, but a future version will include a right-click capability. This customization also precludes the use of the Snap layouts pop-up that's automatically provided by Windows 11 to apps. I will try to add this feature back in a future version of the app too.
+**Customized title bar.** In an interim step toward the tabbed-based UI coming in the next version of the app, .NETpad 3.0 uses a fully customized title bar area at the top of the window with an app logo (with right-click system menu), the current document name, a draggable and double-clickable area, and the standard Close, Maximize/Restore, and Close window buttons. This customization precludes the use of the Snap layouts pop-up that's automatically provided by Windows 11 to apps. I will try to add this feature back in a future version of the app too.
 
 ![custom-titlebar](https://github.com/user-attachments/assets/df6fe221-fe17-4fe9-b9bb-edb8d46392b7)
 
@@ -65,8 +65,6 @@ This version of the app supports a single document per app instance as before, b
 .NETpad 3.0 for Windows 11 has plenty of problems, some self-inflicted and some triggered by Microsoft's buggy implementation of Windows 11 theming in WPF in .NET 9. Some of the key issues I'm aware of include:
 
 **App theme customization can crash the app.** If you open an Expander control (there are two in the Settings interface) and then try to change the app theme, .NETpad will crash. Microsoft is aware of this issue, which is in WPF/.NET 9 and not this app, and has fixed it internally. So this serious issue will be fixed when Microsoft releases an updated version of .NET 9 in stable. (I left the UIs to change the theme in the app in anticipation of this.)
-
-**No right-click window menu.** Because I customized the app title bar area, you can't right-click the app icon in the upper-left of the window to display the system window menu. (Typing Alt + Space still works, however.) I will add this feature back in a future version of the app.
 
 **No Snap layouts.** Because I customized the app title bar area, you won't see a pop-up Snap layouts grid when you hover the mouse cursor over the Maximize/Restore window button. There are complex solutions to this problem, and perhaps Microsoft will fix this issue in the future. Either way, I hope to fix this issue in a future version of the app.
 
