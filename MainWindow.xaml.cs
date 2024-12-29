@@ -783,35 +783,6 @@ namespace DotNetPad
             SaveSettings();
         }
 
-        private void ThemeButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (App.Current.ThemeMode == ThemeMode.Light)
-            {
-                App.Current.ThemeMode = ThemeMode.Dark;
-                ThemeButton.ToolTip = "Dark theme";
-                LightThemeRadio.IsChecked = false;
-                DarkThemeRadio.IsChecked = true;
-                SystemThemeRadio.IsChecked = false; 
-            }
-            else if (App.Current.ThemeMode == ThemeMode.Dark)
-            {
-                App.Current.ThemeMode = ThemeMode.System;
-                ThemeButton.ToolTip = "System theme";
-                LightThemeRadio.IsChecked = false;
-                DarkThemeRadio.IsChecked = false;
-                SystemThemeRadio.IsChecked = true; 
-            }
-            else
-            {
-                App.Current.ThemeMode = ThemeMode.Light;
-                ThemeButton.ToolTip = "Light theme";
-                LightThemeRadio.IsChecked = true;
-                DarkThemeRadio.IsChecked = false;
-                SystemThemeRadio.IsChecked = false;
-            }
-            SaveSettings();
-        }
-
         private void Count_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             WordCount = !WordCount;
@@ -834,6 +805,44 @@ namespace DotNetPad
                 if (Count != 1)
                     WordCountText.Text += "s";
             }
+        }
+
+        private void SystemThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.ThemeMode = ThemeMode.System;
+            LightThemeRadio.IsChecked = false;
+            DarkThemeRadio.IsChecked = true;
+            SystemThemeRadio.IsChecked = false;
+            SystemThemeButton.IsChecked = true;
+            LightThemeButton.IsChecked = false;
+            DarkThemeButton.IsChecked = false;
+            SaveSettings();
+        }
+
+        private void LightThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.ThemeMode = ThemeMode.Light; 
+            LightThemeRadio.IsChecked = true;
+            DarkThemeRadio.IsChecked = false;
+            SystemThemeRadio.IsChecked = false;
+            SystemThemeButton.IsChecked = false;
+            LightThemeButton.IsChecked = true;
+            DarkThemeButton.IsChecked = false;
+            
+            SaveSettings();
+        }
+
+        private void DarkThemeButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.ThemeMode = ThemeMode.Dark;
+            LightThemeRadio.IsChecked = true;
+            DarkThemeRadio.IsChecked = false;
+            SystemThemeRadio.IsChecked = false;
+            SystemThemeButton.IsChecked = false;
+            LightThemeButton.IsChecked = false;
+            DarkThemeButton.IsChecked = true;
+            
+            SaveSettings();
         }
     }
 }

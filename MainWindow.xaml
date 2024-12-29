@@ -188,14 +188,17 @@
                     </Menu>
                     <Separator Grid.Column="1" Visibility="Visible" BorderThickness="0"/>
                     <Menu Grid.Column="2" BorderThickness="0">
-                        <MenuItem Name="ThemeButton" WindowChrome.IsHitTestVisibleInChrome="False" HorizontalAlignment="Right" FlowDirection="RightToLeft" ToolTip="Toggle app theme" Click="ThemeButton_Click">
+                        <MenuItem Name="ThemeButton" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="False" FlowDirection="LeftToRight" ToolTip="App theme" ToolTipService.InitialShowDelay="500">
                             <MenuItem.Header>
                                 <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE790;" />
                             </MenuItem.Header>
+                            <MenuItem Name="SystemThemeButton" Header="System theme" IsCheckable="True" IsChecked="False" Click="SystemThemeButton_Click" />
+                            <MenuItem Name="LightThemeButton" Header="Light theme" IsCheckable="True" IsChecked="False" Click="LightThemeButton_Click" />
+                            <MenuItem Name="DarkThemeButton" Header="Dark theme" IsCheckable="True" IsChecked="False" Click="DarkThemeButton_Click" />
                         </MenuItem>
                     </Menu>
                     <Menu Grid.Column="3" BorderThickness="0">
-                        <MenuItem Name="SettingsButton" WindowChrome.IsHitTestVisibleInChrome="False" HorizontalAlignment="Right" FlowDirection="RightToLeft" ToolTip="Settings" Click="SettingsButton_Click">
+                        <MenuItem Name="SettingsButton" WindowChrome.IsHitTestVisibleInChrome="False" HorizontalAlignment="Right" FlowDirection="RightToLeft" ToolTip="Settings" ToolTipService.InitialShowDelay="500" Click="SettingsButton_Click">
                             <MenuItem.Header>
                                 <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE713;" />
                             </MenuItem.Header>
@@ -251,18 +254,18 @@
                 <StatusBar Grid.Row="3" Name="StatusBar1" Padding="4" Background="Transparent">
                     <StatusBarItem>
                         <ScrollViewer MouseDoubleClick="AutoSaveMenu_Click" Focusable="False" IsTabStop="False" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
-                            <TextBlock Width="100" Name="AutoSaveText" Text="Auto save: Off" Margin="5,0,10,0" ToolTip="Double-click to toggle Auto save" />
+                            <TextBlock Width="100" Name="AutoSaveText" Text="Auto save: Off" Margin="5,0,10,0" ToolTip="Double-click to toggle Auto save" ToolTipService.InitialShowDelay="500" />
                         </ScrollViewer>
                     </StatusBarItem>
                     <StatusBarItem>
                         <TextBlock Width="100" Name="PositionText" Text="Ln 1, Col 1" Margin="5,0,10,0"/>
                     </StatusBarItem>
                     <StatusBarItem>
-                        <TextBlock Width="75" Name="ZoomText" Text="100%" Margin="5,0,10,0" ToolTip="Ctrl + Plus to Zoom in, Ctrl + Minus to Zoom out, Ctrl + 0 to reset" />
+                        <TextBlock Width="75" Name="ZoomText" Text="100%" Margin="5,0,10,0" ToolTip="Ctrl + Plus to Zoom in, Ctrl + Minus to Zoom out, Ctrl + 0 to reset" ToolTipService.InitialShowDelay="500" />
                     </StatusBarItem>
                     <StatusBarItem>
                         <ScrollViewer MouseDoubleClick="Count_MouseDoubleClick" Focusable="False" IsTabStop="False" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
-                            <TextBlock Width="100" Name="WordCountText" Text="0 words" Margin="5,0,10,0" ToolTip="Double-click to toggle word/character count" />
+                            <TextBlock Width="100" Name="WordCountText" Text="0 words" Margin="5,0,10,0" ToolTip="Double-click to toggle word/character count" ToolTipService.InitialShowDelay="500" />
                         </ScrollViewer>
                     </StatusBarItem>
                     <StatusBarItem>

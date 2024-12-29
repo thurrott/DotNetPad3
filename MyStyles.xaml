@@ -4,10 +4,7 @@
         <Setter Property="Border.CornerRadius" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
         <Setter Property="Background" Value="{DynamicResource CardBackgroundFillColorDefaultBrush}" />
-    </Style>
-
-    <Style x:Key="Win11Background" TargetType="Control">
-        <Setter Property="Background" Value="{DynamicResource SolidBackgroundFillColorSecondaryBrush}" />
+        <Setter Property="Opacity" Value="1" />
     </Style>
     <Style x:Key="Win11Text" TargetType="Control">
         <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
@@ -16,14 +13,5 @@
     <Style x:Key="Win11Text2" TargetType="Control">
         <Setter Property="Foreground" Value="{DynamicResource TextFillColorSecondaryBrush}" />
         <Setter Property="FontSize" Value="12" />
-    </Style>
-    <Style x:Key="Win11AppChrome" TargetType="Control">
-        <Setter Property="Background" Value="{DynamicResource CardBackgroundFillColorSecondaryBrush}" />
-    </Style>
-    <Style x:Key="Win11Dialog" TargetType="Border">
-        <Setter Property="Border.CornerRadius" Value="5" />
-    </Style>
-    <Style x:Key="Win11DialogButton" TargetType="Button">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource AccentFillColorSecondaryBrush}" />
     </Style>
 </ResourceDictionary>

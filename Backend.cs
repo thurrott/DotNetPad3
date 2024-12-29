@@ -30,24 +30,30 @@ namespace DotNetPad
             };
             if (Application.Current.ThemeMode == ThemeMode.Light)
             {
-                ThemeButton.ToolTip = "Light theme";
                 LightThemeRadio.IsChecked = true;
                 DarkThemeRadio.IsChecked = false;
                 SystemThemeRadio.IsChecked = false;
+                SystemThemeButton.IsChecked = false;
+                LightThemeButton.IsChecked = true;
+                DarkThemeButton.IsChecked = false;
             }
             else if (Application.Current.ThemeMode == ThemeMode.Dark) 
             {
-                ThemeButton.ToolTip = "Dark theme"; 
                 LightThemeRadio.IsChecked = false;
                 DarkThemeRadio.IsChecked = true;
                 SystemThemeRadio.IsChecked = false;
+                SystemThemeButton.IsChecked = false;
+                LightThemeButton.IsChecked = false;
+                DarkThemeButton.IsChecked = true;
             }
             else
             {
-                ThemeButton.ToolTip = "System theme";
                 LightThemeRadio.IsChecked = false;
                 DarkThemeRadio.IsChecked = false;
                 SystemThemeRadio.IsChecked = true;
+                SystemThemeButton.IsChecked = true;
+                LightThemeButton.IsChecked = false;
+                DarkThemeButton.IsChecked = false;
             }
 
             // App window location and size
