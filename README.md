@@ -20,7 +20,7 @@ This version of the app supports a single document per app instance as before, b
 
 ![accent-color](https://github.com/user-attachments/assets/32daebe1-4101-400a-b166-04344ff761f4)
 
-**Customized title bar.** In an interim step toward the tabbed-based UI coming in the next version of the app, .NETpad 3.0 uses a fully customized title bar area at the top of the window with an app logo (with right-click system menu), the current document name, a draggable and double-clickable area, and the standard Close, Maximize/Restore, and Close window buttons. For now, you have to type "Alt + Space" to display the system window menu, but a future version will include a right-click capability. This customization also precludes the use of the Snap layouts pop-up that's automatically provided by Windows 11 to apps. I will try to add this feature back in a future version of the app too.
+**Customized title bar.** In an interim step toward the tabbed-based UI coming in the next version of the app, .NETpad 3.0 uses a fully customized title bar area at the top of the window with an app logo (with right-click system menu), the current document name, a draggable and double-clickable area, and the standard Close, Maximize/Restore, and Close window buttons. This customization precludes the use of the Snap layouts pop-up that's automatically provided by Windows 11 to apps. I will try to add this feature back in a future version of the app too.
 
 ![custom-titlebar](https://github.com/user-attachments/assets/df6fe221-fe17-4fe9-b9bb-edb8d46392b7)
 
