@@ -1,4 +1,5 @@
 ﻿using DotNetPad;
+using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -813,9 +814,6 @@ namespace DotNetPad
             LightThemeRadio.IsChecked = false;
             DarkThemeRadio.IsChecked = true;
             SystemThemeRadio.IsChecked = false;
-            SystemThemeButton.IsChecked = true;
-            LightThemeButton.IsChecked = false;
-            DarkThemeButton.IsChecked = false;
             SaveSettings();
         }
 
@@ -825,10 +823,6 @@ namespace DotNetPad
             LightThemeRadio.IsChecked = true;
             DarkThemeRadio.IsChecked = false;
             SystemThemeRadio.IsChecked = false;
-            SystemThemeButton.IsChecked = false;
-            LightThemeButton.IsChecked = true;
-            DarkThemeButton.IsChecked = false;
-            
             SaveSettings();
         }
 
@@ -838,10 +832,6 @@ namespace DotNetPad
             LightThemeRadio.IsChecked = true;
             DarkThemeRadio.IsChecked = false;
             SystemThemeRadio.IsChecked = false;
-            SystemThemeButton.IsChecked = false;
-            LightThemeButton.IsChecked = false;
-            DarkThemeButton.IsChecked = true;
-            
             SaveSettings();
         }
     }

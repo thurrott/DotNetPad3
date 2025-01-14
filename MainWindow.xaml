@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DotNetPad" Closing="Window_Closing"
         mc:Ignorable="d" WindowStyle="None" StateChanged="Window_StateChanged"
-        Title=".NETpad 3 for Windows 11" Width="1000" Height="625">
+        Title=".NETpad 3 for Windows 11" Width="1000" Height="625" >
     <Window.Resources>
         <RoutedUICommand x:Key="FindNextCommand" Text="FindNext">
             <RoutedUICommand.InputGestures>
@@ -108,7 +108,6 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Menu Grid.Column="0" FlowDirection="LeftToRight" HorizontalAlignment="Left" VerticalAlignment="Top"
                           HorizontalContentAlignment="Left"  
@@ -188,16 +187,6 @@
                     </Menu>
                     <Separator Grid.Column="1" Visibility="Visible" BorderThickness="0"/>
                     <Menu Grid.Column="2" BorderThickness="0">
-                        <MenuItem Name="ThemeButton" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="False" FlowDirection="LeftToRight" ToolTip="App theme" ToolTipService.InitialShowDelay="500">
-                            <MenuItem.Header>
-                                <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE790;" />
-                            </MenuItem.Header>
-                            <MenuItem Name="SystemThemeButton" Header="System theme" IsCheckable="True" IsChecked="False" Click="SystemThemeButton_Click" />
-                            <MenuItem Name="LightThemeButton" Header="Light theme" IsCheckable="True" IsChecked="False" Click="LightThemeButton_Click" />
-                            <MenuItem Name="DarkThemeButton" Header="Dark theme" IsCheckable="True" IsChecked="False" Click="DarkThemeButton_Click" />
-                        </MenuItem>
-                    </Menu>
-                    <Menu Grid.Column="3" BorderThickness="0">
                         <MenuItem Name="SettingsButton" WindowChrome.IsHitTestVisibleInChrome="False" HorizontalAlignment="Right" FlowDirection="RightToLeft" ToolTip="Settings" ToolTipService.InitialShowDelay="500" Click="SettingsButton_Click">
                             <MenuItem.Header>
                                 <TextBlock FontFamily="Segoe Fluent Icons" Text="&#xE713;" />
@@ -525,7 +514,7 @@
                                 </Grid>
                             </StackPanel>
                         </Border>
-                        <Grid Grid.Row="12">
+                        <Grid Name="AboutGrid" Grid.Row="12">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
