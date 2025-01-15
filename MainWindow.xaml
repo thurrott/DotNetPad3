@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DotNetPad" Closing="Window_Closing"
+        xmlns:local="clr-namespace:DotNetPad" Closing="Window_Closing" 
+        SizeChanged="Window_SizeChanged" Name="AppWindow"
         mc:Ignorable="d" WindowStyle="None" StateChanged="Window_StateChanged"
         Title=".NETpad 3 for Windows 11" Width="1000" Height="625" >
     <Window.Resources>
@@ -262,9 +263,25 @@
                     </StatusBarItem>
                 </StatusBar>
             </Grid>
-            <ScrollViewer Grid.Column="1" Name="SettingsScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Focusable="False">
+            <ScrollViewer Grid.Column="1" Name="SettingsScrollViewer" VerticalScrollBarVisibility="Auto" 
+              HorizontalScrollBarVisibility="Auto" Focusable="False">
                 <Grid Name="SettingsGrid" Visibility="Collapsed">
-                    <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0" Name="SettingsHeaderGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Settings" Style="{StaticResource TitleLargeTextBlockStyle}" Margin="50,40,0,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                    </Grid>
+                    <Grid Name="MainSetingsGrid" Grid.Row="1" Grid.Column="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -279,13 +296,8 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Settings" Style="{StaticResource TitleLargeTextBlockStyle}" Margin="50,40,0,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                        </Grid>
                         <Label Grid.Row="1" Content="Appearance" Style="{StaticResource Win11Text}" Margin="50,10,20,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
                         <Expander Grid.Row="2" Name="AppThemeExpander" Margin="50,0,50,0" IsExpanded="False" Focusable="False">
                             <Expander.Header>
@@ -403,8 +415,9 @@
                                 </Grid>
                             </StackPanel>
                         </Border>
-                        <Label Grid.Row="6" Content="Files" Style="{StaticResource Win11Text}" Margin="50,10,20,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                        <Border Grid.Row="7" Visibility="Collapsed" Height="70" Margin="50,0,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
+                        <!-- Add session state UI here -->
+                        <Label Grid.Row="8" Content="Files" Style="{StaticResource Win11Text}" Margin="50,10,20,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <Border Grid.Row="9" Visibility="Collapsed" Height="70" Margin="50,0,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
                             <StackPanel Focusable="False">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -423,9 +436,9 @@
                                         <Label Grid.Row="0" Padding="0" Content="Opening files" Style="{StaticResource Win11Text}" 
                                                VerticalAlignment="Center" HorizontalAlignment="Left" 
                                                Margin="0,5,0,0" />
-                                        <Label Grid.Row="1" Padding="0" Content="Choose where your files are opened" Style="{StaticResource Win11Text2}"
-                                               VerticalAlignment="Center" HorizontalAlignment="Left" 
-                                               Margin="0,5,0,0" />
+                                        <Label Grid.Column="1" Margin="10,10,0,0" Padding="0" Content="Spell check" 
+                                               Style="{StaticResource Win11Text}" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Left" />
                                     </Grid>
                                     <ComboBox Grid.Column="2" Margin="10,17,10,0" Padding="10,5,5,5"
                                               HorizontalAlignment="Right" VerticalAlignment="Top" 
@@ -436,7 +449,7 @@
                                 </Grid>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Row="8" Height="70" Margin="50,0,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
+                        <Border Grid.Row="10" Height="70" Margin="50,0,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
                             <StackPanel Focusable="False">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -465,8 +478,8 @@
                                 </Grid>
                             </StackPanel>
                         </Border>
-                        <Label Grid.Row="9" Content="Spelling" Style="{StaticResource Win11Text}" Margin="50,10,20,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                        <Border Grid.Row="10" Height="70" Margin="50,0,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
+                        <Label Grid.Row="11" Content="Spelling" Style="{StaticResource Win11Text}" Margin="50,10,20,10" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <Border Grid.Row="12" Height="70" Margin="50,0,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
                             <StackPanel Focusable="False">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -481,12 +494,12 @@
                                            Style="{StaticResource Win11Text}" 
                                            VerticalAlignment="Center" HorizontalAlignment="Left" />
                                     <ToggleButton Grid.Column="2" Name="SpellCheckToggleButton" Content="Off" 
-                                           Margin="10,17,10,0" IsChecked="False"
-                                           HorizontalAlignment="Left" VerticalAlignment="Top" Click="SpellCheckToggleButton_Click" />
+                                                  Margin="10,17,10,0" IsChecked="False"
+                                                  HorizontalAlignment="Left" VerticalAlignment="Top" Click="SpellCheckToggleButton_Click" />
                                 </Grid>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Row="11" Visibility="Collapsed" Height="70" Margin="50,5,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
+                        <Border Grid.Row="13" Visibility="Collapsed" Height="70" Margin="50,5,50,0" CornerRadius="4"  Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlAltFillColorTertiaryBrush}" BorderThickness="1">
                             <StackPanel Focusable="False">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -514,20 +527,22 @@
                                 </Grid>
                             </StackPanel>
                         </Border>
-                        <Grid Name="AboutGrid" Grid.Row="12">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Content="About this app" FontWeight="Bold" Style="{StaticResource Win11Text}" Margin="50,20,20,0"  />
-                            <Label Name="AppNameLabel" Grid.Row="1" Content="App name" Style="{StaticResource Win11Text}" Margin="50,0,0,0" />
-                            <Label Name="VersionLabel" Grid.Row="2" Content="Version number" Style="{StaticResource Win11Text}" Margin="50,0,0,0" />
-                            <Label Name="CopyrightLabel" Grid.Row="3" Content="Copyright" Style="{StaticResource Win11Text}" Margin="50,0,0,10" />
-                            <Button Name="ResetButton" Grid.Row="4" Content="Reset settings" Margin="50,0,20,25" Click="ResetButton_Click" />
-                        </Grid>
+                    </Grid>
+                    <Grid Name="AboutGrid" Grid.Row="1" Grid.Column="1" Width="300" HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="About this app" FontWeight="Bold" Style="{StaticResource Win11Text}" Margin="50,20,20,0"  />
+                        <Label Name="AppNameLabel" Grid.Row="1" Content="App name" Style="{StaticResource Win11Text}" Margin="50,0,0,0" />
+                        <Label Name="VersionLabel" Grid.Row="2" Content="Version number" Style="{StaticResource Win11Text}" Margin="50,0,0,0" />
+                        <Label Name="CopyrightLabel" Grid.Row="3" Content="Copyright" Style="{StaticResource Win11Text}" Margin="50,0,0,10" />
+                        <Button Name="ResetButton" Grid.Row="4" Content="Reset settings" Margin="50,0,20,25" Click="ResetButton_Click" />
+                    </Grid>
+                    <Grid Name="SettingsSpacerGrid" Grid.Column="0" Grid.Row="2" Height="50">
                     </Grid>
                 </Grid>
             </ScrollViewer>

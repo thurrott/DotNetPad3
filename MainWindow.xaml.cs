@@ -106,6 +106,24 @@ namespace DotNetPad
             }
         }
 
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // If viewing settings, auto flow the layout as needed
+            if (SettingsScrollViewer.Visibility == Visibility.Visible)
+            {
+                if (AppWindow.Width > 950)
+                {
+                    AboutGrid.SetValue(Grid.RowProperty, 1);
+                    AboutGrid.SetValue(Grid.ColumnProperty, 1);
+                }
+                else
+                {
+                    AboutGrid.SetValue(Grid.RowProperty, 2);
+                    AboutGrid.SetValue(Grid.ColumnProperty, 0);
+                }
+            }
+        }
+
         //
         // Timer
         //
