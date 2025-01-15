@@ -12,7 +12,7 @@ This version of the app supports a single document per app instance as before, b
 
 ![dotnetpad-3-app-themes](https://github.com/user-attachments/assets/25bda5cf-83dc-4e9b-9e5d-20b0451c6a11)
 
-**Toggle app theme.** Like other modern Windows 11 apps, .NETpad 3.0 provides a settings interface so the user can switch between Light, Dark, and System theme modes. There is also a toggle button in the main app window for switching between these modes, with a tooltip that communicates the current app theme. Note that the app will crash if an Expander control is open or has been opened: This is a bug in .NET 9 that Microsoft will fix. So it will work fine in the near future.
+**Toggle app theme.** Like other modern Windows 11 apps, .NETpad 3.0 provides a settings interface so the user can switch between Light, Dark, and System theme modes. (A crash-causing bug in .NET 9 was fixed in 9.0.1, so there are no more issues here.)
 
 ![app-theme](https://github.com/user-attachments/assets/22b497d6-aed9-4676-b52b-2973c8615f4f)
 
@@ -63,8 +63,6 @@ This version of the app supports a single document per app instance as before, b
 ## Known issues
 
 .NETpad 3.0 for Windows 11 has plenty of problems, some self-inflicted and some triggered by Microsoft's buggy implementation of Windows 11 theming in WPF in .NET 9. Some of the key issues I'm aware of include:
-
-**App theme customization can crash the app.** If you open an Expander control (there are two in the Settings interface) and then try to change the app theme, .NETpad will crash. Microsoft is aware of this issue, which is in WPF/.NET 9 and not this app, and has fixed it internally. So this serious issue will be fixed when Microsoft releases an updated version of .NET 9 in stable. (I left the UIs to change the theme in the app in anticipation of this.)
 
 **No Snap layouts.** Because I customized the app title bar area, you won't see a pop-up Snap layouts grid when you hover the mouse cursor over the Maximize/Restore window button. There are complex solutions to this problem, and perhaps Microsoft will fix this issue in the future. Either way, I hope to fix this issue in a future version of the app.
 
