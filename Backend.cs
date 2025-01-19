@@ -250,7 +250,7 @@ namespace DotNetPad
         //
         private void Save()
         {
-            if (dts[0].DocumentName != "Untitled")
+            if (!string.IsNullOrEmpty(dts[0].DocumentName) && dts[0].DocumentName != "Untitled")
             {
                 try
                 {

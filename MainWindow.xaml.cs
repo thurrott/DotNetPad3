@@ -544,9 +544,10 @@ namespace DotNetPad
                     }
                     else
                     {
-                        MessageBoxDialog mbd = new(".NETpad - Go to line", "The line number is beyond the total number of lines");
+                        MessageBoxDialog mbd = new(".NETpad - Go to line", 
+                            "The line number is beyond the total number of lines")
                         {
-                            Owner = this;
+                            Owner = this
                         };
 
                         mbd.ShowDialog();

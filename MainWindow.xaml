@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DotNetPad" Closing="Window_Closing" 
-        SizeChanged="Window_SizeChanged" Name="AppWindow"
+        SizeChanged="Window_SizeChanged" Name="AppWindow" MinWidth="750" MinHeight="600"
         mc:Ignorable="d" WindowStyle="None" StateChanged="Window_StateChanged"
         Title=".NETpad 3 for Windows 11" Width="1000" Height="625" >
     <Window.Resources>
