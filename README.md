@@ -32,7 +32,7 @@ This version of the app supports a single document per app instance as before, b
 
 **New Spell check feature with toggle.** You can toggle the system Spell check feature on/off and the app will save your preferences to settings and retain it between app launches. WPF doesn't provide native access to the related Autocorrect feature in Windows 11, but if that is added in the future, I will update the app.
 
-**New custom dialogs.** I created a new custom dialog template for .NETpad so that sub-windows like Auto save (which looks different for enable and disable), Confirmation, and Go to line look both native and beautiful. These windows support a nice translucency effect that I think makes them look nicer than the similar dialogs found in Notepad. (Note that there's no way to customize File save, save as, or open this way.) For now, the app still uses a few standard (and thus non-styled) MessageBox dialogs, but I plan to create a custom MessageBox in the next version to address that.
+**New custom dialogs.** I created a new custom dialog template for .NETpad so that sub-windows like Auto save (which looks different for enable and disable), Confirmation, Go to line andd MessageBox look both native and beautiful. These windows support a nice translucency effect that I think makes them look nicer than the similar dialogs found in Notepad. (Note that there's no way to customize File save, save as, or open this way.) I added the custom MessageBox dialog, replacking the non-styled system MessageBox, in January 2025.
 
 ![confirmation-dialogs](https://github.com/user-attachments/assets/93d39be1-3716-4c57-9bce-f162c2d0c062)
 
