@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Media;
+using Windows.ApplicationModel.VoiceCommands;
 
 namespace DotNetPad
 {
@@ -259,7 +260,12 @@ namespace DotNetPad
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBoxDialog mbd = new(".NETpad", ex.Message)
+                    {
+                        Owner = this
+                    };
+
+                    mbd.ShowDialog();
                 }
             }
             else
@@ -282,7 +288,12 @@ namespace DotNetPad
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBoxDialog mbd = new(".NETpad", ex.Message)
+                    {
+                        Owner = this
+                    };
+
+                    mbd.ShowDialog();
                 }
             }
         }
@@ -373,7 +384,12 @@ namespace DotNetPad
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBoxDialog mbd = new(".NETpad", ex.Message)
+                    {
+                        Owner = this
+                    };
+
+                    mbd.ShowDialog();
                 }
             }
 
@@ -446,6 +462,18 @@ namespace DotNetPad
         // Find and replace
         //
 
+        // Added 2025
+        private void FindFailed()
+        {
+            MessageBoxDialog mbd = new(".NETpad", "Cannot find " + (char)34 + 
+                dts[0].FindTextString + (char)34)
+            {
+                Owner = this
+            };
+
+            mbd.ShowDialog();
+        }
+
         private void FindTheText()
         {
             if (dts[0].FindLastIndexFound > -1)
@@ -459,7 +487,7 @@ namespace DotNetPad
             }
             else
             {
-                MessageBox.Show(this, "Cannot find " + (char)34 + dts[0].FindTextString + (char)34, Application.Current.MainWindow.GetType().Assembly.GetName().Name, MessageBoxButton.OK, MessageBoxImage.Information);
+                FindFailed();
             }
         }
 

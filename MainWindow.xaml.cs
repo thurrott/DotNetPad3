@@ -544,7 +544,12 @@ namespace DotNetPad
                     }
                     else
                     {
-                        MessageBox.Show("The line number is beyond the total number of lines", "Go to line");
+                        MessageBoxDialog mbd = new(".NETpad - Go to line", "The line number is beyond the total number of lines");
+                        {
+                            Owner = this;
+                        };
+
+                        mbd.ShowDialog();
                         GoToCommand_Executed(this, e);
                     }
                 }
@@ -720,9 +725,9 @@ namespace DotNetPad
                         TextBox1.SelectionStart = dts[0].FindLastIndexFound;
                     }
                     else
-                        MessageBox.Show(this, "Cannot find " + (char)34 + dts[0].FindTextString +
-                            (char)34, System.Windows.Application.Current.MainWindow.GetType().Assembly.GetName().Name,
-                            MessageBoxButton.OK, MessageBoxImage.Information);
+                    {
+                        FindFailed();
+                    }
                 }
             }
         }
@@ -753,9 +758,9 @@ namespace DotNetPad
                         TextBox1.Text = NewText;
                     }
                     else
-                        MessageBox.Show(this, "Cannot find " + (char)34 + dts[0].FindTextString + (char)34,
-                            System.Windows.Application.Current.MainWindow.GetType().Assembly.GetName().Name,
-                            MessageBoxButton.OK, MessageBoxImage.Information);
+                    {
+                        FindFailed();
+                    }
                 }
             }
         }
