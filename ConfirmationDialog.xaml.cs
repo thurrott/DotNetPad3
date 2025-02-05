@@ -28,6 +28,12 @@ namespace DotNetPad
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ConfirmationSaveButton.Focus();
+
+            // Prevent the window from being resized
+            this.MinWidth = this.Width;
+            this.MinHeight = this.Height;
+            this.MaxWidth = this.Width;
+            this.MaxHeight = this.Height;
         }
 
         private void ConfirmationButton_Click(object sender, RoutedEventArgs e)

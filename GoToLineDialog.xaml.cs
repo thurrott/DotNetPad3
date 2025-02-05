@@ -30,6 +30,12 @@ namespace DotNetPad
             GoToTextBox.Text = LineNumber.ToString();
             GoToTextBox.Focus();
             GoToTextBox.SelectAll();
+
+            // Prevent the window from being resized
+            this.MinWidth = this.Width;
+            this.MinHeight = this.Height;
+            this.MaxWidth = this.Width;
+            this.MaxHeight = this.Height;
         }
         private void GoToLineButton_Click(object sender, RoutedEventArgs e)
         {

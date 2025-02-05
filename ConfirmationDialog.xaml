@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DotNetPad"
-        mc:Ignorable="d" WindowStartupLocation="CenterOwner"        
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner"
         ShowInTaskbar="False" ResizeMode="CanResize" WindowStyle="None" Loaded="Window_Loaded"
         SizeToContent="WidthAndHeight" BorderThickness="0" Background="Transparent">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
