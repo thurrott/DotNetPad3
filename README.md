@@ -68,8 +68,6 @@ This version of the app supports a single document per app instance as before, b
 
 **Document actions work when viewing settings.** When you view the Settings interface, normal file operations (like typing Ctrl + O to display a File open dialog) still work. That shouldn't be the case, obviously, so I will investigate ways to solve this issue.
 
-**Custom dialog boxes are resizable.** I really like the look and feel of the custom dialogs I created for .NETpad 3.0, but there is one major issue there, and it's tied to WPF's buggy support for Windows 11 theming: You can grab the border of these windows and drag to resize them. Obviously, the custom dialogs should not be resizable. But the only way to style these windows correctly requires this. I will investigate a workaround for a future version of the app. 
-
 **Selection rectangles.** Microsoft introduced a bizarre new usability feature in Windows 11 in 2024 that displays a garish black selection rectangle around the default control in a newly opened window. (You can see this in File Explorer, for example: The "Quick access" control is selected by default.) I'm not aware of a way to disable this ridiculous feature, which appears intermittently. But I will try to figure that out for a future version of the app (and hope that Microsoft adds a way to prevent this from displaying in Windows 11).
 
 ![selection-rectangle](https://github.com/user-attachments/assets/ebbca0df-0d4c-4713-90d5-4c26e39110e7)
