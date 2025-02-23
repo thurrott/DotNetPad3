@@ -162,15 +162,17 @@ namespace DotNetPad
                 StatusBar1.Visibility = Visibility.Collapsed;
                 StatusBarMenu.IsChecked = false;
             }
-
             // Auto save with timer
+            // 2025 change: Only start the timer is AutoSave is true
             App.AutoSave = Settings.Default.MyAutoSave;
             MyTimer = new System.Timers.Timer(30000)   // 30 seconds
             {
                 AutoReset = true,
-                Enabled = true,
+                Enabled = false
             };
             MyTimer.Elapsed += OnTimerElapsed;
+            if (App.AutoSave)
+                MyTimer.Enabled = true;
 
             AutoSaveMenu.IsChecked = App.AutoSave;
             AutoSaveToggleButton.IsChecked = App.AutoSave;
